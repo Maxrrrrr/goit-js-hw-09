@@ -1,15 +1,18 @@
-function formatMessage(message, maxLength){
-if (message.length <= maxLength){
-    return message;
-    
-} else {
-    return message.slice(0, maxLength) + "...";
+function createArrayOfNumbers(min, max) {
+    let numbers = [];
+
+    for (var i = min; i <= max; i++) {
+        numbers.push(i);
+    }
+
+    return numbers;
 }
 
-}
-console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
-console.log(formatMessage("Curabitur ligula sapien", 23)); // "Curabitur ligula sapien"
-console.log(formatMessage("Vestibulum facilisis purus nec", 20)); // "Vestibulum facilisis..."
-console.log(formatMessage("Vestibulum facilisis purus nec", 30)); // "Vestibulum facilisis purus nec"
-console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); // "Nunc sed turpis..."
-console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); // "Nunc sed turpis a felis in nunc fringilla"
+console.log(createArrayOfNumbers(1, 3));
+console.log(createArrayOfNumbers(14, 17));
+console.log(createArrayOfNumbers(29, 34));
+
+
+let randomMin = Math.floor(Math.random() * 10); // Випадкове число від 0 до 9
+let randomMax = randomMin + Math.floor(Math.random() * 10); // Випадкове число від randomMin до randomMin + 9
+console.log("Випадковий масив: " + createArrayOfNumbers(randomMin, randomMax));
