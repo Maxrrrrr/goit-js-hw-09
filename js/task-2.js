@@ -1,18 +1,9 @@
-function createArrayOfNumbers(min, max) {
-    let numbers = [];
-
-    for (var i = min; i <= max; i++) {
-        numbers.push(i);
+function makeArray(firstArray, secondArray, maxLength) {
+    const combinedArray = firstArray.concat(secondArray);
+  
+    if (combinedArray.length > maxLength) {
+      return combinedArray.slice(0, maxLength);
+    } else {
+      return combinedArray;
     }
-
-    return numbers;
-}
-
-console.log(createArrayOfNumbers(1, 3));
-console.log(createArrayOfNumbers(14, 17));
-console.log(createArrayOfNumbers(29, 34));
-
-
-let randomMin = Math.floor(Math.random() * 10); // Випадкове число від 0 до 9
-let randomMax = randomMin + Math.floor(Math.random() * 10); // Випадкове число від randomMin до randomMin + 9
-console.log("Випадковий масив: " + createArrayOfNumbers(randomMin, randomMax));
+  }
